@@ -1,22 +1,28 @@
-import Link from "next/link";
+'use client';
+import { motion } from 'framer-motion';
 
 interface Props {
   title: string;
   subTitle?: string;
   label?: string;
+  index?: number;
   icon?: React.ReactNode;
-  href?: string;
 }
 
 export const SimpleWidget = ({
 label,
 title,
 icon,
-subTitle,
-href
+index = 0,
+subTitle
 }: Props) => {
   return (
-    <div className="bg-white shadow-xl p-3 sm:min-w-[25%] min-w-full  rounded-2xl border-1 border-gray-50 my-2">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.2, duration: 0.6, ease: 'easeOut' }}
+      className="bg-white shadow-xl p-3 sm:min-w-[25%] min-w-full  rounded-2xl border-1 border-gray-50 my-2 w-70"
+    >
       <div className="flex flex-col">
         {label && (
           <div>
@@ -32,13 +38,7 @@ href
             </div>
           </div>
         </div>
-        {href && (
-          <div className="w-full place-items-end text-right border-t-2 border-gray-100 mt-2">
-            <Link href={href} className="text-indigo-600 text-xs font-medium">Más</Link>
-          </div>
-        )}
-        
       </div>
-    </div>
+    </motion.div>
   )
 };

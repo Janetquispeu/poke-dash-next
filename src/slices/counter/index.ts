@@ -6,7 +6,7 @@ interface CounterState {
 }
 
 const initialState: CounterState = {
-  count: 5,
+  count: 20,
   isReady: false
 }
 
@@ -34,6 +34,5 @@ const counterSlice = createSlice({
   }
 });
 
-export const counterSelect = (state) => state.counter.count;
 export const { addOne, substractOne, resetCount, initCounterState } = counterSlice.actions
 export default counterSlice.reducer

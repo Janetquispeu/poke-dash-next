@@ -1,17 +1,21 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { PokemonGrid } from '../PokemonGrid';
 import { useAppSelector } from '@/store';
+import { Title } from '@/components';
 
 export const Favorites = () => {
-  const pokemons = useAppSelector(state => state.pokemons);
-  const newPokemons =Object.values(pokemons);
-  console.log(newPokemons, 'newPokemons');
+  const favorites = useAppSelector(state => state.pokemons.favorites);
+  const [pokemons, setPokemons] = useState(Object.values(favorites));
+
+  useEffect(() => {
+    setPokemons(Object.values(favorites));
+  }, [favorites]);
 
   return (
-    <div className="flex flex-col p-10">
-      <span className="text-5xl my-2">Pokémons favoritos</span>
-      <PokemonGrid pokemons={newPokemons} />
+    <div className="flex flex-col">
+      <Title text="Tus Pokémones favoritos" subText={`Total: ${pokemons.length} pokemon(s)`} />
+      <PokemonGrid pokemons={pokemons} />
     </div>
   )
 }

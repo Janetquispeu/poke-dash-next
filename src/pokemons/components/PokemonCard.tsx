@@ -13,16 +13,15 @@ interface Props {
 
 const PokemonCard = ({ pokemon }: Props) => {
   const { id, name } = pokemon;
-  const isFavorite = useAppSelector(state => !!state.pokemons[id]);
+  const isFavorite = useAppSelector(state => !!state.pokemons.favorites[id]);
   const dispatch = useAppDispatch();
  
   const handleToggle = () => {
-    console.log(pokemon, 'pokemon');
     dispatch(toggleFavorite(pokemon));
   };
 
   return (
-    <div className="right-0 w-60">
+    <div className="right-0 w-60 shadow-md hover:shadow-xl transition-all">
       <div className="flex flex-col bg-white rounded overflow-hidden shadow-lg">
         <div className="flex flex-col items-center justify-center text-center p-6 bg-gray-800 border-b">
           <div className="w-[100] h-[100] relative">
@@ -37,7 +36,7 @@ const PokemonCard = ({ pokemon }: Props) => {
           <p className="pt-2 text-lg font-semibold text-gray-50 capitalize">{name}</p>
           <div className="mt-5">
             <Link href={`pokemon/${name}`} className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100">
-              Más información
+              Ir al detalle
             </Link>
           </div>
         </div>
@@ -47,7 +46,7 @@ const PokemonCard = ({ pokemon }: Props) => {
             onClick={handleToggle}
           >
             <div className="text-red-600">
-              {isFavorite ? <IoHeart /> : <IoHeartOutline />}
+              {isFavorite ? <IoHeart size={20} /> : <IoHeartOutline size={20} />}
             </div>
             <div className="pl-3">
               <p className="text-sm font-medium text-gray-800 leading-none">
