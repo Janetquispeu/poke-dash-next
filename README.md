@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 PokeDash — Dashboard de Pokemones
 
-## Getting Started
+Un **dashboard interactivo** construido con **Next.js**, **Tailwind CSS** y la **PokéAPI**, que permite visualizar estadísticas, totales y favoritos de Pokemones de manera moderna y dinámica.
 
-First, run the development server:
+---
 
+## 🚀 Características principales
+
+- 📊 **Dashboard informativo** con tarjetas (Pokemones atrapados, totales y favoritos).  
+- 💾 **Manejo de estado global con Redux Toolkit** (contador, favoritos, etc.).  
+- ⚡ **Consumo de PokéAPI** desde el servidor (Server Components).  
+- 📈 **Gráficos estadísticos** para representar datos de forma visual.  
+- 🌈 **Interfaz moderna y responsiva** con Tailwind CSS.  
+- 🌀 **Animaciones suaves** con Framer Motion. 
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-593D88?style=for-the-badge&logo=redux)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-ff69b4?style=for-the-badge&logo=framer)
+![PokéAPI](https://img.shields.io/badge/PokéAPI-red?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript)
+
+
+
+## 🖼️ Vista previa
+ 
+> Ejemplo:  
+> ![Vista previa del dashboard](./public/pokemons.png)
+
+---
+
+## ⚙️ Instalación y uso
+
+1. **Clonar repositorio**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Janetquispeu/poke-dash-next.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Instalar dependencias** 
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Crear file .env en la raiz del proyecto y agregar valor** 
+```bash
+NEXT_PUBLIC_API_URL="https://pokeapi.co/api/v2"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Ejecutar comando** 
+```bash
+npm run dev
+```
 
-## Learn More
+Abrir en [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## Despliegue en vercel
+[https://poke-dash-li7uj30cg-janets-projects-92e39707.vercel.app/dashboard/favorites](https://poke-dash-li7uj30cg-janets-projects-92e39707.vercel.app/dashboard/favorites)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

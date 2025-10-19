@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react'
 import { SimpleWidget } from './SimpleWidget'
 import { IoCubeOutline, IoGlobeOutline, IoHeartOutline } from 'react-icons/io5'
@@ -31,7 +31,7 @@ export const WidgetGrid = () => {
   ];
 
   return (
-    <div className="flex flex-wrap p-2 gap-10">
+    <div className="flex p-[10px 0] gap-[10px] justify-between w-full">
       {data.map((widget, index) => (
         <SimpleWidget
           key={index}

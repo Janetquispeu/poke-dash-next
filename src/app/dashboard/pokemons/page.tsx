@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemons[]> => {
-  const res: PokemonsResponse = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
+  const res: PokemonsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pokemon?limit=${limit}&offset=${offset}`)
     .then((res) => res.json());
 
     const pokemons = res.results.map((pokemon) => ({

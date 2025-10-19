@@ -7,7 +7,7 @@ export const metadata = {
 }
 export default function MainPage() {
   return (
-    <div className="text-black p-2">
+    <div className="text-black p-[10px] h-full">
       <Title text="Dashboard" subText="Información general" />
       <WidgetGrid />
       <Chart />
